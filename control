@@ -1,0 +1,35 @@
+Source: libisotree
+Section: libs
+Priority: optional
+Maintainer: Alex Kirhenshtein <alk@netxms.org>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 10),
+ cmake
+Standards-Version: 4.6.2
+Homepage: https://github.com/david-cortes/isotree
+Vcs-Browser: https://github.com/david-cortes/isotree
+Vcs-Git: https://github.com/david-cortes/isotree.git
+
+Package: libisotree-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libisotree1 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Isolation Forest and variations such as SCiForest and EIF -- development files
+
+Package: libisotree1
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: Isolation Forest and variations such as SCiForest and EIF
+ Fast and multi-threaded implementation of Isolation Forest (a.k.a. iForest)
+ and variations of it such as Extended Isolation Forest (EIF), Split-Criterion
+ iForest (SCiForest), Fair-Cut Forest (FCF), Robust Random-Cut Forest (RRCF),
+ and other customizable variants, aimed at outlier/anomaly detection plus
+ additions for imputation of missing values, distance/similarity calculation
+ between observations, and handling of categorical data. Written in C++.
